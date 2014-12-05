@@ -4,7 +4,7 @@ namespace sa
 {
 	void bubbleSort(std::vector<int> &p_toSort)
 	{
-		if(p_toSort.size() == 0)
+		if(p_toSort.empty())
 			return;
 
 		for(unsigned int i = p_toSort.size() - 1; i != 0; --i) {
