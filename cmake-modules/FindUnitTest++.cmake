@@ -17,4 +17,3 @@ find_library(UNITTEST++_LIBRARIES NAMES UnitTest++ libUnitTest++
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(UnitTest++ DEFAULT_MSG
                                   UNITTEST++_LIBRARIES UNITTEST++_INCLUDE_DIRS)
-#mark_as_advanced(UNITTEST++_INCLUDE_DIR UNITTEST++_LIBRARY)

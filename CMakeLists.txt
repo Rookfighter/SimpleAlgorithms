@@ -9,7 +9,8 @@ find_package(UnitTest++)
 
 include_directories("src")
 file(GLOB ALGORITHMS_SRC
-	 "src/sort/*.cpp")
+	 "src/sort/*.cpp"
+	 "src/collections/*.cpp")
 
 add_library(${PROJECT_NAME} ${ALGORITHMS_SRC})
 
@@ -19,8 +20,9 @@ include_directories(${UNITTEST++_INCLUDE_DIRS}
 set(TEST_BIN_NAME "Test${PROJECT_NAME}")
 file(GLOB TEST_SRC
 	"test/main.cpp"
+	"test/utils/*.cpp"
 	"test/sort/*.cpp"
-	"test/utils/*.cpp")
+	"test/collections/*.cpp")
 add_executable(${TEST_BIN_NAME} ${TEST_SRC})
 target_link_libraries(${TEST_BIN_NAME} ${UNITTEST++_LIBRARIES} ${PROJECT_NAME})
 
