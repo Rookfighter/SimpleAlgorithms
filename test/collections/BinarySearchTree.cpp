@@ -122,7 +122,8 @@ SUITE(binary_search_tree)
         testTree.insert(0);
         testTree.insert(1);
         testTree.insert(2);
-
+        testTree.insert(1);
+        testTree.remove(2);
         // check for memory leaks e.g. with valgrind
     }
 }
