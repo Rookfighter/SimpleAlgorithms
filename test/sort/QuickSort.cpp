@@ -5,25 +5,25 @@
 
 SUITE(quick_sort)
 {
-    TEST_FIXTURE(UniqueElementsFixture, unique_elements)
+    TEST_FIXTURE(UniqueListFixture, unique_list)
     {
         sa::quickSort(testData);
         CHECK_VECTOR_EQUAL(testResult, testData);
     }
 
-    TEST_FIXTURE(DuplicateElementsFixture, duplicate_elements)
+    TEST_FIXTURE(DuplicateListFixture, duplicate_list)
     {
         sa::quickSort(testData);
         CHECK_VECTOR_EQUAL(testResult, testData);
     }
 
-    TEST_FIXTURE(NegativeElementsFixture, negative_elements)
+    TEST_FIXTURE(SortedListFixture, sorted_list)
     {
         sa::quickSort(testData);
         CHECK_VECTOR_EQUAL(testResult, testData);
     }
 
-    TEST_FIXTURE(SingleElementFixture, duplicate_elements)
+    TEST_FIXTURE(SingleListFixture, single_list)
     {
         sa::quickSort(testData);
         CHECK_VECTOR_EQUAL(testResult, testData);
