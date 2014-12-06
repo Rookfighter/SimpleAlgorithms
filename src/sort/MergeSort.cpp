@@ -2,12 +2,6 @@
 
 namespace sa
 {
-	static void copy(const std::vector<int> &p_src, const int p_startSrc, std::vector<int> &p_dest, const int p_startDest, const int p_count)
-	{
-		for(int i = 0; i < p_count; ++i)
-			p_dest[p_startDest + i] = p_src[p_startDest + i];
-	}
-
 	static void merge(std::vector<int> &p_toSortA, const int p_leftA, const int p_rightA,
 					  std::vector<int> &p_toSortB, const int p_leftB, const int p_rightB,
 					  std::vector<int> &p_toSortC, const int p_leftC)
@@ -54,17 +48,16 @@ namespace sa
 			// divide list into half
 			int mid = (p_left + p_right) / 2;
 
-			mergeSort(p_toSortA, p_left, mid, p_toSortB);
-			mergeSort(p_toSortA, mid + 1, p_right, p_toSortB);
+			mergeSort(p_toSortB, p_left, mid, p_toSortA);
+			mergeSort(p_toSortB, mid + 1, p_right, p_toSortA);
 
-			merge(p_toSortA, p_left, mid, p_toSortA, mid + 1, p_right, p_toSortB, p_left);
-			copy(p_toSortB, p_left, p_toSortA, p_left, p_right - p_left + 1);
+			merge(p_toSortB, p_left, mid, p_toSortB, mid + 1, p_right, p_toSortA, p_left);
 		}
 	}
 
 	void mergeSort(std::vector<int> &p_toSort)
 	{
-		std::vector<int> helper(p_toSort.size());
+		std::vector<int> helper(p_toSort);
 		mergeSort(p_toSort, 0, p_toSort.size() - 1, helper);
 	}
 }
