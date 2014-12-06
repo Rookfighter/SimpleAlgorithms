@@ -11,5 +11,7 @@ The project covers:
 * quick sort
 * merge sort
 * heap sort
+* PriorityQueue
+* BinarySearchTree
 
 UnitTest++ is expected to be in the subdirectory ```lib/UnitTest++```.
